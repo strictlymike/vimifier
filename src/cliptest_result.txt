@@ -1,0 +1,10 @@
+get 1
+size: 14
+Was this your card: Ace of spades
+get 2
+size: 14
+Was this your card: Ace of spades
+set
+get 3
+GlobalLock failed, 6
+hClip = 0x04330008
