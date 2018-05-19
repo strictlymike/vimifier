@@ -10,8 +10,22 @@ composed in `notepad.exe` with Vimify attached.
 
 ## Usage
 Execute `vimify.exe`, then click inside the window and drag the pointer to the
-application you want to Vimify. Alternately, execute `vimify.exe <pid>` to
-Vimify an already-running application.
+application you want to Vimify. Alternately, execute it in one of the following ways:
+
+To vimify an already-running application by name:
+```
+vimify.exe -n <name>
+```
+
+To vimify an already-running application by pid:
+```
+vimify.exe -p <pid>
+```
+
+To launch a vimified instance of an application:
+```
+vimify.exe -s <name>
+```
 
 ## How It Works
 Vimifier installs a low-level keyboard hook to intercept keystrokes sent to the
