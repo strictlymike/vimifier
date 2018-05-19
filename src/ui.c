@@ -1,6 +1,7 @@
 #include <windowsx.h>
 
 #include "ui.h"
+#include "resource.h"
 #include "debug.h"
 
 #pragma comment(lib, "gdi32")
@@ -48,11 +49,10 @@ vimifyUI(HINSTANCE hInstance, DWORD *ppid)
     wc.cbSize        = sizeof(WNDCLASSEX);
     wc.lpfnWndProc   = vimifyWndProc;
     wc.hInstance     = hInstance;
-    wc.hIcon         = LoadIcon(NULL, IDI_APPLICATION);
+    wc.hIcon         = LoadIcon(hInstance, MAKEINTRESOURCE(RES_VIMIFY_ICON));
     wc.hCursor       = LoadCursor(NULL, IDC_ARROW);
     wc.hbrBackground = (HBRUSH)(COLOR_WINDOW+1);
     wc.lpszClassName = VIMIFY_WINDOW_CLASS_A;
-    wc.hIconSm       = LoadIcon(NULL, IDI_APPLICATION);
 
     if(!RegisterClassEx(&wc))
     {

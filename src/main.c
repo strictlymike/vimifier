@@ -60,6 +60,9 @@ WinMain(
 	int pid = 0;
 	char c;
 	HANDLE hProc = NULL;
+#if VIMIFY_CUI
+	HINSTANCE hInstance = NULL;
+#endif
 
 	while ((c = getopt(ARGC, ARGV, "p:s:n:h")) != -1) {
 		switch (c)
@@ -119,7 +122,7 @@ WinMain(
 		return 1;
 	}
 
-	if (vimify(pid)) {
+	if (vimify(hInstance, pid)) {
 		fprintf(stderr, "Failure\n");
 		return 1;
 	}

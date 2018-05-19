@@ -3,5 +3,5 @@
 #include <windows.h>
 
 int vimifyInit(void);
-int vimify(DWORD pid);
+int vimify(HINSTANCE hInstance, DWORD pid);
 

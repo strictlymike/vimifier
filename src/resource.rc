@@ -1,0 +1,3 @@
+#include "resource.h"
+
+RES_VIMIFY_ICON ICON "..\\resources\\vim.ico"

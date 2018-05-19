@@ -1,0 +1,1 @@
+#define RES_VIMIFY_ICON 300

@@ -1021,14 +1021,14 @@ exit_vimifyInit:
 }
 
 int
-vimify(DWORD pid)
+vimify(HINSTANCE hInstance, DWORD pid)
 {
 	int ret = 1;
 	HWND hWnd = NULL;
 
 	g.vimify_pid = pid;
 
-	hWnd = vimifyUI(NULL, &g.vimify_pid);
+	hWnd = vimifyUI(hInstance, &g.vimify_pid);
 	if (!hWnd) {
 		goto exit_vimify;
 	}

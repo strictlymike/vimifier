@@ -16,10 +16,14 @@ VIMIFY_SOURCES = \
 	moves.c \
 	clip.c \
 	ui.c \
+	resource.res \
 	main.c
 
 vimify.exe: $(VIMIFY_SOURCES)
 	$(CC) $(CFLAGS) /Fe$@ $**
+
+resource.res: resource.rc
+	rc.exe /fo $@ $**
 
 cliptest.exe: cliptest.c clip.c
 
