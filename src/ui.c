@@ -195,6 +195,12 @@ vimifyWndProc(
 
 			break;
 
+		case WM_KEYDOWN:
+			if (wParam == VK_ESCAPE) {
+				DestroyWindow(hWnd);
+			}
+			break;
+
         case WM_CLOSE:
             DestroyWindow(hWnd);
 			break;

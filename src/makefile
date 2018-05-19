@@ -1,4 +1,4 @@
-TARGETS = vimify.exe cliptest.exe
+TARGETS = vimify.exe
 
 CC = cl.exe
 CFLAGS = $(CFLAGS) /DDEBUG=1 /Zi
@@ -8,11 +8,21 @@ CLEANFILES = $(TARGETS) *.exp *.obj *.pdb *.ilk
 
 all: $(TARGETS)
 
+VIMIFY_SOURCES = \
+	xgetopt.c \
+	vimify.c \
+	vimreg.c \
+	keyaut.c \
+	moves.c \
+	clip.c \
+	ui.c \
+	main.c
 
-vimify.exe: main.c vimify.c vimreg.c keyaut.c moves.c clip.c ui.c
+vimify.exe: $(VIMIFY_SOURCES)
 	$(CC) $(CFLAGS) /Fe$@ $**
 
 cliptest.exe: cliptest.c clip.c
+
 .cpp.exe:
 	$(CC) $** $(LIBS) $(CFLAGS)
 
